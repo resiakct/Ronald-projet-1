@@ -34,17 +34,17 @@ module.exports = {
 			noAdmin: "Hiện tại bot chưa có admin nào"
 		},
 		en: {
-			missingMessage: "Please enter the message you want to send to admin",
+			missingMessage: "Entrez votre message 📭",
 			sendByGroup: "\n- Sent from group: %1\n- Thread ID: %2",
 			sendByUser: "\n- Sent from user",
-			content: "\n\nContent:\n─────────────────\n%1\n─────────────────\nReply this message to send message to user",
+			content: "\n\nContent:\n══════════════════\n%1\n══════════════════\n",
 			success: "Sent your message to %1 admin successfully!\n%2",
 			failed: "An error occurred while sending your message to %1 admin\n%2\nCheck console for more details",
-			reply: "📍 Reply from admin %1:\n─────────────────\n%2\n─────────────────\nReply this message to continue send message to admin",
-			replySuccess: "Sent your reply to admin successfully!",
-			feedback: "📝 Feedback from user %1:\n- User ID: %2%3\n\nContent:\n─────────────────\n%4\n─────────────────\nReply this message to send message to user",
-			replyUserSuccess: "Sent your reply to user successfully!",
-			noAdmin: "Bot has no admin at the moment"
+			reply: "📍Reponce de l'admin %1:\n══════════════════\n%2\n══════════════════\n",
+			replySuccess: "✅ l'utilisateur a bien reçu ton message ",
+			feedback: "📝 Feedback from user %1:\n- User ID: %2%3\n\nContent:\n══════════════════\n%4\n══════════════════\n",
+			replyUserSuccess: "✅ ladmin a bien reçu ton message !",
+			noAdmin: "je n'ai pas d'admin pour l'instant 😭"
 		}
 	},
 
