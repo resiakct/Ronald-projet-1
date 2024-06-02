@@ -1,6 +1,6 @@
 # 📍 𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗨𝗘 𝗦𝗨𝗥 𝗠𝗢𝗡 𝗙𝗢𝗥𝗞𝗘 .
 
-# ══════════════
+# ════════════
 
 # TU AS LA PERMISSION DE FOURCHER CETTE FOURCHETTE QUE J'AI FAIT TOUT SEUL 
 
