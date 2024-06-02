@@ -1,9 +1,13 @@
 # 📍 𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗨𝗘 𝗦𝗨𝗥 𝗠𝗢𝗡 𝗙𝗢𝗥𝗞𝗘 .
 
-# 𝗧𝘂 𝗮𝘀 𝗹𝗮 𝗽𝗲𝗿𝗺𝗶𝘀𝘀𝗶𝗼𝗻 𝗱𝗲 𝗳𝗼𝘂𝗿𝗰𝗵𝗲́ 𝗺𝗮 𝗳𝗼𝘂𝗿𝗰𝗵𝗲 𝗷'𝗮𝗶 𝗽𝗮𝘀𝘀𝗲́ 1𝗵𝗲𝘂𝗿𝗲𝘀 𝗲𝘁 20 𝗺𝗶𝗻𝘂𝘁𝗲𝘀 𝗽𝗼𝘂𝗿 𝗹𝗲 𝗳𝗼𝘂𝗿𝗰𝗵𝗲́ 
+# TU AS LA PERMISSION DE FOURCHER CETTE FOURCHETTE QUE J'AI FAIT TOUT SEUL 
 
 # 🎯 𝗙𝗕 : https://www.facebook.com/sory.ronald.alexandre
 
 # 🎯 𝗣𝗶𝗰𝘁𝘂𝗿𝗲 𝗽𝗿𝗼𝗳𝗶𝗹
 
-![Screenshot_20240530-151129](https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/1533451b-07c9-424c-ba0b-57482c7411da) 
+![Screenshot_20240602-214141](https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/41c5bc6b-4e9e-46d3-8874-3bba59de348f)
+
+
+SOIT GENTIL 🙂
+![IMG-20240507-WA0001](https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/b9066717-26eb-42ac-8426-7e177ffd3bd7)
