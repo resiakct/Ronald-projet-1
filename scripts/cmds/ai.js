@@ -50,7 +50,7 @@ module.exports = {
     }
 
     const { response, messageID } = await getAIResponse(input, event.senderID, event.messageID);
-    api.sendMessage(` \n══════𝐑𝐎𝐍𝐀𝐋𝐃══════\n${response}\n
+    api.sendMessage(` \n══════𝐑𝐎𝐍𝐀𝐋𝐃══════\n🥏 ${response} 🪶\n
 ══════𝐑𝐎𝐍𝐀𝐋𝐃══════`, event.threadID, messageID);
   },
   onChat: async function ({ event, message }) {
@@ -61,7 +61,7 @@ module.exports = {
       message.reply(`
 
 \n══════𝐑𝐎𝐍𝐀𝐋𝐃══════
-\n${response}\n
+\n🥏 ${response} 🪶\n
 ══════𝐑𝐎𝐍𝐀𝐋𝐃══════`, messageID);
     }
   }
