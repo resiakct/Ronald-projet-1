@@ -1,7 +1,74 @@
-{
-  "userAgent": "Mozilla/5.0 (Linux; Android 4.1.2; GT-I8552 Build/JZO54K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.125 Mobile Safari/537.36",
-  "account": {
-    "email": "soryalexandre7@gmail.com",
-    "password": "ronaldbot"
+[
+  {
+    "key": "datr",
+    "value": "value",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": true,
+    "creation": "2024-05-28T11:17:17.366Z",
+    "lastAccessed": "2024-05-28T11:17:17.366Z"
+  },
+  {
+    "key": "sb",
+    "value": "value",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": true,
+    "creation": "2024-05-28T11:17:17.366Z",
+    "lastAccessed": "2024-05-28T11:17:17.366Z"
+  },
+  {
+    "key": "ps_n",
+    "value": "value",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": true,
+    "creation": "2024-05-28T11:17:17.366Z",
+    "lastAccessed": "2024-05-28T11:17:17.366Z"
+  },
+  {
+    "key": "ps_l",
+    "value": "value",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": true,
+    "creation": "2024-05-28T11:17:17.366Z",
+    "lastAccessed": "2024-05-28T11:17:17.366Z"
+  },
+  {
+    "key": "c_user",
+    "value": "value",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": true,
+    "creation": "2024-05-28T11:17:17.366Z",
+    "lastAccessed": "2024-05-28T11:17:17.366Z"
+  },
+  {
+    "key": "xs",
+    "value": "value",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": true,
+    "creation": "2024-05-28T11:17:17.366Z",
+    "lastAccessed": "2024-05-28T11:17:17.366Z"
+  },
+  {
+    "key": "fr",
+    "value": "value",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": true,
+    "creation": "2024-05-28T11:17:17.366Z",
+    "lastAccessed": "2024-05-28T11:17:17.366Z"
+  },
+  {
+    "key": "m_page_voice",
+    "value": "value",
+    "domain": "facebook.com",
+    "path": "/",
+    "hostOnly": true,
+    "creation": "2024-05-28T11:17:17.366Z",
+    "lastAccessed": "2024-05-28T11:17:17.366Z"
   }
-}
+]
