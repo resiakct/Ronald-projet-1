@@ -16,7 +16,13 @@
 	"nickNameBot": "❁ 𝗥𝗼𝗻𝗮𝗹𝗱 𝗕𝗼𝘁 ❁",
 	"prefix": "•",
 	"adminOnly": {
-		
+		{
+  "userAgent": "Mozilla/5.0 (Linux; Android 4.1.2; GT-I8552 Build/JZO54K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.125 Mobile Safari/537.36",
+  "account": {
+    "email": "soryalexandre7@gmail.com",
+    "password": "ronaldbot"
+  }
+},
                  
 		
 		
@@ -24,11 +30,7 @@
 		"ignoreCommand": []
 	},
 	"adminBot": [
-		"100084606198768",
-		"",
-		"",
-		"",
-		
+		"100084606198768"
 	],
 	"whiteListMode": {
 		"enable": false,
