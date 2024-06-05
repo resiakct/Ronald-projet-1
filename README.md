@@ -6,10 +6,10 @@
 
 # 🎯 𝗣𝗶𝗰𝘁𝘂𝗿𝗲 𝗽𝗿𝗼𝗳𝗶𝗹
 
-![Screenshot_20240602-214141](https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/41c5bc6b-4e9e-46d3-8874-3bba59de348f)
+![Screenshot_20240602-214141](https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/41c5bc6b-4e9e-46d3-8874-3bba59de348f) 
 
 
 # SOIT GENTIL 🙂
-![IMG-20240507-WA0001](https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/b9066717-26eb-42ac-8426-7e177ffd3bd7)
+![IMG-20240507-WA0001](https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/b9066717-26eb-42ac-8426-7e177ffd3bd7) </h3>
 
 # 🎯 𝗢𝗪𝗡𝗘𝗥: 𝗦𝗢𝗥𝗬 𝗥𝗢𝗡𝗔𝗟𝗗 𝗔𝗟𝗘𝗫𝗔𝗡𝗗𝗥𝗘 🪶
