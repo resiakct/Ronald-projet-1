@@ -22,14 +22,14 @@ module.exports = {
 			defaultWelcomeMessage: "Xin chào {userName}.\nChào mừng bạn đến với {boxName}.\nChúc bạn có buổi {session} vui vẻ!"
 		},
 		en: {
-			session1: "morning",
-			session2: "noon",
-			session3: "afternoon",
-			session4: "evening",
+			session1: "journée",
+			session2: "midi",
+			session3: "après-midi",
+			session4: "Soirée",
 			welcomeMessage: "Merci de m'avoir invité dans ce groupe !══════════════════ \n prefix: %1 ══════════════════ utilise: %1help pour voir mes commandes",
 			multiple1: "you",
 			multiple2: "you guys",
-			defaultWelcomeMessage: `𝗕𝗶𝗲𝗻𝘃𝗲𝗻𝘂(𝗲) {userName} ═════════════════ 𝗱𝗮𝗻𝘀 𝗹𝗲 𝗴𝗿𝗼𝘂𝗽𝗲 {boxName} ══════════════════ 𝗽𝗮𝘀𝘀𝗲 𝘂𝗻𝗲 𝗯𝗼𝗻𝗻𝗲 {session} 😊`
+			defaultWelcomeMessage: `𝗕𝗶𝗲𝗻𝘃𝗲𝗻𝘂(𝗲) {userName} ═════════════════ 𝗱𝗮𝗻𝘀 𝗹𝗲 𝗴𝗿𝗼𝘂𝗽𝗲 {boxName} ══════════════════ 𝗽𝗮𝘀𝘀𝗲 𝘂𝗻(e) 𝗯𝗼𝗻𝗻𝗲 {session} 😊`
 		}
 	},
 
