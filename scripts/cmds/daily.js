@@ -46,8 +46,8 @@ module.exports = {
 			friday: "Friday",
 			saturday: "Saturday",
 			sunday: "Sunday",
-			alreadyReceived: "You have already received the gift",
-			received: "You have received %1 coin and %2 exp"
+			alreadyReceived: "😑 Tu a déjà reçu ton cadeau 🤌🏽.\n utilise le cmd •bal pour consulter ton argent 💵",
+			received: "Tu as reçus %1 billets de dollars [💵] et %2 en espèces"
 		}
 	},
 
