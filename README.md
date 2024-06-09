@@ -15,4 +15,4 @@
 # 🎯 𝗢𝗪𝗡𝗘𝗥: 𝗦𝗢𝗥𝗬 𝗥𝗢𝗡𝗔𝗟𝗗 𝗔𝗟𝗘𝗫𝗔𝗡𝗗𝗥𝗘 🪶
 
 # 𝗖𝗢𝗠𝗣𝗧𝗘 𝗗𝗨 𝗕𝗢𝗧 𝗦𝗨𝗥 𝗙𝗕 
-https://i.ibb.co/ngYdyb5/image.jpg
+<h1 align="center"><img               src="https://i.ibb.co/ngYdyb5/image.jpg" width="22px">
