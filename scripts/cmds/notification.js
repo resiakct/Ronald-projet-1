@@ -32,7 +32,7 @@ module.exports = {
 		en: {
 			missingMessage: "Entrez le message pour que je puisse l'envoyer dans tous les groupes ",
 			notification: "🛎️ 𝗡𝗼𝘁𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻 🤴🏽",
-			sendingNotification: " %1 groupe identifier 📬",
+			sendingNotification: " %1 groupe(s) identifier 📬",
 			sentNotification: "✅ le message est envoyé dans %1 groupes avec succès",
 			errorSendingNotification: "An error occurred while sending to %1 groups:\n%2"
 		}
