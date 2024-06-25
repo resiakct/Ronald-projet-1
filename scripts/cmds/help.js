@@ -60,7 +60,7 @@ module.exports = {
 			pageNotFound: "Trang %1 không tồn tại"
 		},
 		en: {
-			help: "╔═══════════╗\n𝗥𝗢𝗡𝗔𝗟𝗗 𝗖𝗠𝗗𝗦\n╚═══════════╝\n%1\n╔═══════════╗\n𝗥𝗢𝗡𝗔𝗟𝗗 𝗖𝗠𝗗𝗦\n╚═══════════╝\n➳ 𝒑𝒂𝒈𝒆  [ %2/%3 ]\n➪[%4] Cmds \n➪Écrit %5help <page> pour voir d'autres cmds 👨🏽‍💻\n\n├────────⭔\n│ %6\n╰─────────────⭓",
+			help: "╔═══════════╗\n𝗥𝗢𝗡𝗔𝗟𝗗 𝗖𝗠𝗗𝗦\n╚═══════════╝\n%1\n╔═══════════╗\n𝗥𝗢𝗡𝗔𝗟𝗗 𝗖𝗠𝗗𝗦\n╚═══════════╝\n➳ Page(s) [ %2/%3 ]\n➪[%4] Cmds \n➪Écrit %5help <page> pour voir d'autres cmds 👨🏽‍💻\n\n├────────⭔\n│ %6\n╰─────────────⭓",
 			help2: "%1├───────⭔\n➪J'ai [%2] Cmds actuellement \n➪Écrit %3help <command name> \npour voir comment la cmd fonctionne  👨🏽‍💻│ %4\n╰─────────────⭓",
 			commandNotFound: "Command \"%1\" does not exist",
 			getInfoCommand: "╭── NAME ────⭓\n│ %1\n════════════════\n 𝗜𝗡𝗙𝗢\n│ 𝗱𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻: %2\n│ Other names: %3\n│ Other names in your group: %4\n│ Version: %5\n│ Role: %6\n│ Time per command: %7s\n│ Author: %8\n════════════════\n 𝗨𝗦𝗔𝗚𝗘\n%9\n════════════════\n 𝗡𝗢𝗧𝗘\n│ The content inside <XXXXX> can be changed\n│ The content inside [a|b|c] is a or b or c\n╰──────⭔",
@@ -146,7 +146,7 @@ module.exports = {
 				}
 				arrayInfo.sort((a, b) => (a.category < b.category ? -1 : 1));
 				arrayInfo.forEach((data, index) => {
-					const categoryUpcase = `${index == 0 ? `╭` : ``}═════${data.category.toUpperCase()} ${index == 0 ? "⭓" : "═════"}`;
+					const categoryUpcase = `${index == 0 ? `╭` : ``}│════➪[${data.category.toUpperCase()} ${index == 0 ? "⭓" : "]"}`;
 					data.names = data.names.sort().map(item => item = `│${item}`);
 					msg += `${categoryUpcase}\n${data.names.join("\n")}\n`;
 				});
