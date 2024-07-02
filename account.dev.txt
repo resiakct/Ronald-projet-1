@@ -1,128 +1,62 @@
 [
     {
-        "key": "dbln",
-        "value": "%7B%2261560406289049%22%3A%22SROBi5Mn%22%2C%22100078808403697%22%3A%222I385f9n%22%2C%2261560470887765%22%3A%2219AOu9lx%22%2C%2261557438734611%22%3A%22FGC2RP4i%22%2C%2261560745832879%22%3A%22w38io8VW%22%2C%2261556916525444%22%3A%22HD6T7L14%22%2C%2261561594018319%22%3A%22GLQGnroL%22%7D",
-        "domain": "facebook.com",
-        "path": "/login/device-based/",
+        "name": "_ga_B9CY1C9VBC",
+        "value": "GS1.1.1719924071.7.1.1719924310.0.0.0",
+        "domain": ".mozilla.org",
         "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.435Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
-    },
-    {
-        "key": "sb",
-        "value": "_4pYZolK6FHHAIXgqiqlBIX0",
-        "domain": "facebook.com",
         "path": "/",
-        "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
+        "secure": false,
+        "httpOnly": false,
+        "sameSite": "no_restriction",
+        "session": false,
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "expirationDate": 1782996310,
+        "storeId": null
     },
     {
-        "key": "ps_n",
+        "name": "_ga",
+        "value": "GA1.2.440001031.1717631173",
+        "domain": ".mozilla.org",
+        "hostOnly": false,
+        "path": "/",
+        "secure": false,
+        "httpOnly": false,
+        "sameSite": "no_restriction",
+        "session": false,
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "expirationDate": 1782996287,
+        "storeId": null
+    },
+    {
+        "name": "_gat",
         "value": "1",
-        "domain": "facebook.com",
-        "path": "/",
+        "domain": ".mozilla.org",
         "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
+        "path": "/",
+        "secure": false,
+        "httpOnly": false,
+        "sameSite": "no_restriction",
+        "session": false,
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "expirationDate": 1719924347,
+        "storeId": null
     },
     {
-        "key": "ps_l",
-        "value": "1",
-        "domain": "facebook.com",
-        "path": "/",
+        "name": "_gid",
+        "value": "GA1.2.547117989.1719924071",
+        "domain": ".mozilla.org",
         "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
-    },
-    {
-        "key": "vpd",
-        "value": "v1%3B666x360x2",
-        "domain": "facebook.com",
         "path": "/",
-        "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
-    },
-    {
-        "key": "dpr",
-        "value": "2.1988937854766846",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
-    },
-    {
-        "key": "locale",
-        "value": "fr_FR",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
-    },
-    {
-        "key": "wl_cbv",
-        "value": "v2%3Bclient_version%3A2547%3Btimestamp%3A1719837455",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
-    },
-    {
-        "key": "oo",
-        "value": "v1%7C3%3A1719837465",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
-    },
-    {
-        "key": "wd",
-        "value": "891x1649",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
-    },
-    {
-        "key": "c_user",
-        "value": "61556075803060",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
-    },
-    {
-        "key": "datr",
-        "value": "DzCDZkRJWS41egBrFGa12diI",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
-    },
-    {
-        "key": "xs",
-        "value": "4%3AhH2rbVvuPLqz9w%3A2%3A1719873548%3A-1%3A15877%3A%3AAcXbdjgQF-37KRJysepr6fqY5EPifzvND2Qj00oAqA",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
-    },
-    {
-        "key": "presence",
-        "value": "C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1719873565880%2C%22v%22%3A1%7D",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2024-07-01T22:39:29.443Z",
-        "lastAccessed": "2024-07-01T22:39:29.443Z"
+        "secure": false,
+        "httpOnly": false,
+        "sameSite": "no_restriction",
+        "session": false,
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "expirationDate": 1720010687,
+        "storeId": null
     }
 ]
