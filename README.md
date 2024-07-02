@@ -1,8 +1,7 @@
-align="center"><img               src="
+#𝗦𝗛𝗜𝗞𝗔𝗠𝗔𝗥𝗨 𝗡𝗔𝗥𝗔
 
 https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/56e4d0d1-8085-4dff-9158-4e51cea41cfa
 
-">
 
 
 
