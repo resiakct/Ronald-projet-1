@@ -28,7 +28,7 @@ async function handleCommand(api, event, args, message) {
 
 
 
-        api.sendMessage(`𝗠𝗶𝗮 𝗔𝗲 🍃 \n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━`, event.threadID, messageID);
+        api.sendMessage(`𝗜𝘁𝗮𝗰𝗵𝗶 🦅 \n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━`, event.threadID, messageID);
 
     } catch (error) {
 
@@ -192,7 +192,7 @@ module.exports = {
 
                 lastResponseMessageID = messageID;
 
-                api.sendMessage(`𝗠𝗶𝗮 𝗔𝗲 🍃 \n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━`, event.threadID, messageID);
+                api.sendMessage(`𝗜𝘁𝗮𝗰𝗵𝗶 🦅 \n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━`, event.threadID, messageID);
 
             } catch (error) {
 
