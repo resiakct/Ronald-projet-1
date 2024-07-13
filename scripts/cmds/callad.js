@@ -40,9 +40,9 @@ module.exports = {
 			content: "\n\nContent:\n══════════════════\n%1\n══════════════════\n",
 			success: "Sent your message to %1 admin successfully!\n%2",
 			failed: "An error occurred while sending your message to %1 admin\n%2\nCheck console for more details",
-			reply: "📍Reponce de l'admin %1:\n══════════════════\n%2\n══════════════════\n",
+			reply: "📍Reponce de l'admin\n %1:\n══════════════════\n%2\n══════════════════\n",
 			replySuccess: "✅ l'admin a bien reçu ton message ",
-			feedback: "📝 Feedback from user %1:\n- User ID: %2%3\n\nContent:\n══════════════════\n%4\n══════════════════\n",
+			feedback: "📝 Reponce de l'utilisateur\n %1:\n- User ID: %2%3\n\nMessage\n══════════════════\n%4\n══════════════════\n",
 			replyUserSuccess: "✅ l'utilisateur a bien reçu ton message !",
 			noAdmin: "je n'ai pas d'admin pour l'instant 😭"
 		}
