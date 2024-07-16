@@ -1,211 +1,63 @@
- const axios = require('axios');
-
-
-
-let lastResponseMessageID = null;
-
-
-
-async function handleCommand(api, event, args, message) {
-
-    try {
-
-        const question = args.join(" ").trim();
-
-
-
-        if (!question) {
-
-            return message.reply("Please provide a question to get an answer.");
-
-        }
-
-
-
-        const { response, messageID } = await getAIResponse(question, event.senderID, event.messageID);
-
-        lastResponseMessageID = messageID;
-
-
-
-        api.sendMessage(`𝗠𝗜𝗔 𝗔𝗲 🌸 \n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━`, event.threadID, messageID);
-
-    } catch (error) {
-
-        console.error("Error in handleCommand:", error.message);
-
-        message.reply("An error occurred while processing your request.");
-
-    }
-
-}
-
-
-
-async function getAnswerFromAI(question) {
-
-    try {
-
-        const services = [
-
-            { url: 'https://markdevs-last-api.onrender.com/gpt4', params: { prompt: question, uid: 'your-uid-here' } },
-
-            { url: 'http://markdevs-last-api.onrender.com/api/v2/gpt4', params: { query: question } },
-
-            { url: 'https://markdevs-last-api.onrender.com/api/v3/gpt4', params: { ask: question } }
-
-        ];
-
-
-
-        for (const service of services) {
-
-            const data = await fetchFromAI(service.url, service.params);
-
-            if (data) return data;
-
-        }
-
-
-
-        throw new Error("No valid response from any AI service");
-
-    } catch (error) {
-
-        console.error("Error in getAnswerFromAI:", error.message);
-
-        throw new Error("Failed to get AI response");
-
-    }
-
-}
-
-
+const axios = require('axios');
 
 async function fetchFromAI(url, params) {
-
-    try {
-
-        const { data } = await axios.get(url, { params });
-
-        if (data && (data.gpt4 || data.reply || data.response || data.answer || data.message)) {
-
-            const response = data.gpt4 || data.reply || data.response || data.answer || data.message;
-
-            console.log("AI Response:", response);
-
-            return response;
-
-        } else {
-
-            throw new Error("No valid response from AI");
-
-        }
-
-    } catch (error) {
-
-        console.error("Network Error:", error.message);
-
-        return null;
-
-    }
-
+  try {
+    const response = await axios.get(url, { params });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 }
-
-
 
 async function getAIResponse(input, userId, messageID) {
+  const services = [
+    { url: 'https://ai-tools.replit.app/gpt', params: { prompt: input, uid: userId } },
+    { url: 'https://openaikey-x20f.onrender.com/api', params: { prompt: input } },
+    { url: 'http://fi1.bot-hosting.net:6518/gpt', params: { query: input } },
+    { url: 'https://ai-chat-gpt-4-lite.onrender.com/api/hercai', params: { question: input } }
+  ];
 
-    const query = input.trim() || "hi";
+  let response = "𝗛𝗶 𝗶'𝗺 𝗥𝗼𝗻𝗹𝗮𝗹𝗱'𝘀 𝗯𝗼𝘁 𝘄𝗵𝗮𝘁 𝗰𝗮𝗻 𝗶 𝗱𝗼 𝗳𝗼𝗿 𝘆𝗼𝘂 𝘁𝗼𝗱𝗮𝘆....(⁠◠⁠‿⁠◕⁠)";
+  let currentIndex = 0;
 
-    try {
-
-        const response = await getAnswerFromAI(query);
-
-        return { response, messageID };
-
-    } catch (error) {
-
-        console.error("Error in getAIResponse:", error.message);
-
-        throw error;
-
+  for (let i = 0; i < services.length; i++) {
+    const service = services[currentIndex];
+    const data = await fetchFromAI(service.url, service.params);
+    if (data && (data.gpt4 || data.reply || data.response)) {
+      response = data.gpt4 || data.reply || data.response;
+      break;
     }
+    currentIndex = (currentIndex + 1) % services.length; // Move to the next service in the cycle
+  }
 
+  return { response, messageID };
 }
 
-
-
 module.exports = {
+  config: {
+    name: 'ai',
+    author: 'Arn',
+    role: 0,
+    category: 'ai',
+    shortDescription: 'ai to ask anything',
+  },
+  onStart: async function ({ api, event, args }) {
+    const input = args.join(' ').trim();
+    if (!input) {
+      api.sendMessage(`Please provide a question or statement.`, event.threadID, event.messageID);
+      return;
+    }
 
-    config: {
-
-        name: 'ai',
-
-        author: 'coffee',
-
-        role: 0,
-
-        category: 'ai',
-
-        shortDescription: 'AI to answer any question',
-
-    },
-
-    onStart: async function ({ api, event, args }) {
-
-        const input = args.join(' ').trim();
-
-        try {
-
-            const { response, messageID } = await getAIResponse(input, event.senderID, event.messageID);
-
-            lastResponseMessageID = messageID;
-
-            api.sendMessage(`𝗠𝗜𝗔 𝗔𝗲 🌸 \n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━`, event.threadID, messageID);
-
-        } catch (error) {
-
-            console.error("Error in onStart:", error.message);
-
-            api.sendMessage("An error occurred while processing your request.", event.threadID);
-
-        }
-
-    },
-
-    onChat: async function ({ event, message, api }) {
-
-        const messageContent = event.body.trim().toLowerCase();
-
-
-
-        // Check if the message is a reply to the bot's message or starts with "ai"
-
-        if ((event.messageReply && event.messageReply.senderID === api.getCurrentUserID()) || (messageContent.startsWith("ai") && event.senderID !== api.getCurrentUserID())) {
-
-            const input = messageContent.replace(/^ai\s*/, "").trim();
-
-            try {
-
-                const { response, messageID } = await getAIResponse(input, event.senderID, event.messageID);
-
-                lastResponseMessageID = messageID;
-
-                api.sendMessage(`𝗠𝗜𝗔 𝗔𝗲 🍃 \n━━━━━━━━━━━━━━━━\n${response} 🍃\n━━━━━━━━━━━━━━━━`, event.threadID, messageID);
-
-            } catch (error) {
-
-                console.error("Error in onChat:", error.message);
-
-                api.sendMessage("An error occurred while processing your request.", event.threadID);
-
-            }
-
-        }
-
-    },
-
-    handleCommand // Export the handleCommand function for command-based interactions
-
+    const { response, messageID } = await getAIResponse(input, event.senderID, event.messageID);
+    api.sendMessage(`𝗠𝗶𝗮 𝗔𝗲 🍃 \n━━━━━━━━━━━━━━━━\n${response} 💙\n━━━━━━━━━━━━━━━━`, event.threadID, messageID);
+  },
+  onChat: async function ({ event, message }) {
+    const messageContent = event.body.trim().toLowerCase();
+    if (messageContent.startsWith("ai")) {
+      const input = messageContent.replace(/^ai\s*/, "").trim();
+      const { response, messageID } = await getAIResponse(input, event.senderID, message.messageID);
+      message.reply(`𝗠𝗶𝗮 𝗔𝗲 🍃\n━━━━━━━━━━━━━━━━\n${response} 💙\n━━━━━━━━━━━━━━━━`, messageID);
+    }
+  }
 };
