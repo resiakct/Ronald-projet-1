@@ -16,12 +16,13 @@ https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/56e4d0d1-8085-4df
 
 ![Polish_20240615_200439211](https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/e69ff275-0dfa-48a3-b258-dab1de48d56f)
 
-# 🎯 𝗙𝗕 𝗟𝗶𝗻𝗸 : https://www.facebook.com/sory.ronald.alexandre
+🎯 𝗙𝗕 𝗟𝗶𝗻𝗸 : https://www.facebook.com/sory.ronald.alexandre
 
 # 🎯 𝗣𝗶𝗰𝘁𝘂𝗿𝗲 𝗽𝗿𝗼𝗳𝗶𝗹
 
-![Screenshot_20240702-235903](https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/c4f2dc6f-53eb-426c-b226-131151bb9d2e)
+![Screenshot_20240719-172634](https://github.com/user-attachments/assets/38e9706a-dc70-4427-aa8b-bc1e2cbca8d3)
+
 
 # 🎯 𝗕𝗼𝘁 𝗼𝗻 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸
 
-![Screenshot_20240713-010651](https://github.com/user-attachments/assets/2794b7c3-c029-4dc0-a99b-58e7371f2d8f)
+![Screenshot_20240719-172927](https://github.com/user-attachments/assets/bd8f7f4a-736f-43d7-ad6c-8bb9b474e414)
