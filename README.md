@@ -14,7 +14,7 @@ https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/56e4d0d1-8085-4df
 
 # 🎯 OWNER : 𝗦𝗼𝗿𝘆 𝗥𝗼𝗻𝗮𝗹𝗱 𝗔𝗹𝗲𝘅𝗮𝗻𝗱𝗿𝗲
 
-![Polish_20240615_200439211](https://github.com/SoryRonald/Ronald-projet-1/assets/165383634/e69ff275-0dfa-48a3-b258-dab1de48d56f)
+![1720867661582](https://github.com/user-attachments/assets/58992719-66ed-4a1b-8250-a52c62780209)
 
 🎯 𝗙𝗕 𝗟𝗶𝗻𝗸 : https://www.facebook.com/sory.ronald.alexandre
 
