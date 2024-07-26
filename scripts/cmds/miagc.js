@@ -3,8 +3,8 @@ const moment = require('moment-timezone');
 
 module.exports = {
   config: {
-    name: "jarvisgc",
-    aliases: ["stark"],
+    name: "miagc",
+    aliases: ["alliance"],
     version: "1.0",
     author: "AceGun",
     countDown: 5,
