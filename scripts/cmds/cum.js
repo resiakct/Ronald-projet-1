@@ -7,7 +7,7 @@ module.exports = {
     version: "1.0",
     author: "Ronald",
     countDown: 3,
-    category: "P0rno 🔞",
+    category: "Porno 🔞",
   },
 
   langs: {
