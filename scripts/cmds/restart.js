@@ -3,6 +3,7 @@ const fs = require("fs-extra");
 module.exports = {
 	config: {
 		name: "restart",
+                aliases: ["rest"],
 		version: "1.1",
 		author: "NTKhang",
 		countDown: 5,
@@ -23,7 +24,7 @@ module.exports = {
 			restartting: "🔄 | Đang khởi động lại bot..."
 		},
 		en: {
-			restartting: "🔁 | ⏤͟͟͞͞𝗥𝗲𝗱𝗲́𝗺𝗮𝗿𝗿𝗮𝗴𝗲..."
+			restartting: "[♻️] 𝙍𝙚𝙙é𝙢𝙖𝙧𝙧𝙖𝙜𝙚 "
 		}
 	},
 
@@ -31,7 +32,7 @@ module.exports = {
 		const pathFile = `${__dirname}/tmp/restart.txt`;
 		if (fs.existsSync(pathFile)) {
 			const [tid, time] = fs.readFileSync(pathFile, "utf-8").split(" ");
-			api.sendMessage(`✅ | Redémarrage terminé \n \n⏰ | Temps : ${(Date.now() - time) / 1000}s`, tid);
+			api.sendMessage(`[🌐] 𝙁𝙞𝙣 𝙙𝙪 𝙧𝙚𝙙é𝙢𝙖𝙧𝙧𝙖𝙜𝙚\n[⏱️] 𝙏𝙚𝙢𝙥𝙨: ${(Date.now() - time) / 1000}s`, tid);
 			fs.unlinkSync(pathFile);
 		}
 	},
