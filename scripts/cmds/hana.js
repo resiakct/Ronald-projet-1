@@ -8,7 +8,7 @@ module.exports = {
     version: "1.0",
     author: "Zed",
     countDown: 3,
-    category: "media",
+    category: "porno 🔞",
   },
 
   langs: {
