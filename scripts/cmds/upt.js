@@ -3,7 +3,7 @@ module.exports = {
     name: "upt",
     aliases: ["upt", "up"],
     version: "1.0",
-    author: "XyryllPanget",
+    author: "Ronald",
     role: 0,
     shortDescription: {
       en: "Displays the uptime of the bot."
@@ -22,7 +22,7 @@ module.exports = {
     const minutes = Math.floor((uptime / 60) % 60);
     const hours = Math.floor((uptime / (60 * 60)) % 24);
     const days = Math.floor(uptime / (60 * 60 * 24));
-    const uptimeString = `\n🎯  ${days} jours\n \n🍃  ${hours} heures\n  \n🌸  ${minutes} minutes\n  \n🧘🏽‍♂️  ${seconds} secondes\n`;
-    api.sendMessage(`\n╔════Durée════╗\n ${uptimeString}  \n╚════════════╝\n`, event.threadID);
+    const uptimeString =`[🗓️] = ${days} jours\n│ \n [🧘🏽‍♂️] = ${hours} heures\n│  \n [⏳] = ${minutes} minutes\n│  \n [⏱️] = ${seconds} secondes`;
+    api.sendMessage(`╔════Durée════╗\n ${uptimeString}  \n╚════════════╝`, event.threadID);
   }
 };
