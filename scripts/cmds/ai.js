@@ -1,81 +1,300 @@
 const axios = require('axios');
 
-// Define the fonts mapping
-const fonts = {
-    a: "𝗮", b: "𝗯", c: "𝗰", d: "𝗱", e: "𝗲", f: "𝗳", g: "𝗴", h: "𝗵", i: "𝗶",
-    j: "𝗷", k: "𝗸", l: "𝗹", m: "𝗺", n: "𝗻", o: "𝗼", p: "𝗽", q: "𝗾", r: "𝗿",
-    s: "𝘀", t: "𝘁", u: "𝘂", v: "𝘃", w: "𝘄", x: "𝘅", y: "𝘆", z: "𝘇",
-    A: "𝗔", B: "𝗕", C: "𝗖", D: "𝗗", E: "𝗘", F: "𝗙", G: "𝗚", H: "𝗛", I: "𝗜",
-    J: "𝗝", K: "𝗞", L: "𝗟", M: "𝗠", N: "𝗡", O: "𝗢", P: "𝗣", Q: "𝗤", R: "𝗥",
-    S: "𝗦", T: "𝗧", U: "𝗨", V: "𝗩", W: "𝗪", X: "𝗫", Y: "𝗬", Z: "𝗭",
-    ' ': ' ', // Keep space as is
-};
 
-async function fetchFromAI(url, params) {
-    try {
-        const response = await axios.get(url, { params });
-        return response.data;
-    } catch (error) {
-        console.error(error);
-        return null;
-    }
-}
 
-async function getAIResponse(input, userId, messageID) {
-    const services = [
-        { url: 'https://ai-tools.replit.app/gpt', params: { prompt: input, uid: userId } },
-        { url: 'https://openaikey-x20f.onrender.com/api', params: { prompt: input } },
-        { url: 'http://fi1.bot-hosting.net:6518/gpt', params: { query: input } },
-        { url: 'https://ai-chat-gpt-4-lite.onrender.com/api/hercai', params: { question: input } }
-    ];
+const Prefixes = [
 
-    let response = "𝗛𝗶 𝗶'𝗺 𝗥𝗼𝗻𝗹𝗮𝗹𝗱'𝘀 𝗯𝗼𝘁 𝘄𝗵𝗮𝘁 𝗰𝗮𝗻 𝗶 𝗱𝗼 𝗳𝗼𝗿 𝘆𝗼𝘂 𝘁𝗼𝗱𝗮𝘆....(⁠◠⁠‿⁠◕⁠) 💙";
-    let currentIndex = 0;
+  'ai',
 
-    for (let i = 0; i < services.length; i++) {
-        const service = services[currentIndex];
-        const data = await fetchFromAI(service.url, service.params);
-        if (data && (data.gpt4 || data.reply || data.response)) {
-            response = data.gpt4 || data.reply || data.response;
-            break;
-        }
-        currentIndex = (currentIndex + 1) % services.length; // Move to the next service in the cycle
-    }
+  'ask',
 
-    // Convert response to special fonts
-    const convertedResponse = Array.from(response)
-        .map(char => fonts[char] || char) // Use special font or original character if not in fonts
-        .join('');
+  'gpt',
+  'mia',
 
-    return { response: convertedResponse, messageID };
-}
+  'openai',
+
+  '@ai',// put here your AI names 
+
+];
+
+
 
 module.exports = {
-    config: {
-        name: 'ai',
-        author: 'aesther',
-        role: 0,
-        category: 'ai',
-        shortDescription: 'ai to ask anything',
+
+  config: {
+
+    name: 'ai',
+
+    version: '1.0.5',
+
+    author: 'ArYAN', // don't change credits please 🙏🙂
+
+    role: 0,
+
+    category: 'ai',
+
+    longDescription: {
+
+      en: 'AI is designed to answer user queries and engage in conversations based on user input. It provides responses and insights on a wide range of topics.'
+
     },
-    onStart: async function ({ api, event, args }) {
-        const input = args.join(' ').trim();
-        if (!input) {
-            api.sendMessage(`🫰🌟`, event.threadID, event.messageID);
-            return;
+
+    guide: {
+
+      en: `
+
+      Command: ai [question]
+
+      - Use this command to ask a question to the AI chatbot.
+
+      - Example: ai What is the weather like today?
+
+
+
+      Reply with "reset" to clear the conversation history.
+
+      `
+
+    }
+
+  },
+
+  onStart: async () => {},
+
+  onChat: async ({ api, event, args, message }) => {
+
+    const prefix = Prefixes.find(p => event.body.toLowerCase().startsWith(p));
+
+    if (!prefix) return;
+
+
+
+    const question = event.body.slice(prefix.length).trim();
+
+    if (!question) {
+
+      return message.reply("𝙃𝙞 𝙄'𝙢 𝙈𝙞𝙖 𝙍𝙤𝙣𝙖𝙡𝙙'𝙨 𝙫𝙞𝙧𝙩𝙪𝙖𝙡 𝙖𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩. 𝙒𝙝𝙖𝙩 𝙘𝙖𝙣 𝙞 𝙙𝙤 𝙛𝙤𝙧 𝙮𝙤𝙪 ?🤓");
+
+    }
+
+
+
+    const uid = event.senderID;
+
+
+
+    api.setMessageReaction("♻️", event.messageID, () => {}, true);
+
+
+
+    const startTime = Date.now();
+
+
+
+    try {
+
+      const response = await axios.get('https://king-aryanapis.onrender.com/gts/smile', {
+
+        params: { uid, question }
+
+      });
+
+
+
+      if (response.status !== 200 || !response.data) {
+
+        throw new Error('Invalid or missing response from API');
+
+      }
+
+
+
+      const answer = response.data.response;
+
+      const endTime = Date.now();
+
+      const processTimeMs = endTime - startTime;
+
+      const processTimeSec = (processTimeMs / 1000).toFixed(2);
+
+
+
+      const replyMessage = await message.reply(`❔𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻: ${question}\n━━━━━━━━━━━━━\n\n✅ 𝗔𝗻𝘀𝘄𝗲𝗿: ${answer}\n\n━━━━━━━━━━━━━\n𝗣𝗿𝗼𝗰𝗲𝘀𝘀 𝗧𝗶𝗺𝗲: ${processTimeSec} seconds`);
+
+
+
+      global.GoatBot.onReply.set(replyMessage.messageID, {
+
+        commandName: module.exports.config.name,
+
+        messageID: replyMessage.messageID,
+
+        author: event.senderID
+
+      });
+
+
+
+      api.setMessageReaction("✅", event.messageID, () => {}, true);
+
+
+
+    } catch (error) {
+
+      console.error(`Error fetching response: ${error.message}, Status Code: ${error.response ? error.response.status : 'N/A'}`);
+
+      message.reply(`⚠ An error occurred while processing your request. Error: ${error.message}${error.response ? `, Status Code: ${error.response.status}` : ''}. Please try again later.`);
+
+
+
+      api.setMessageReaction("❌", event.messageID, () => {}, true);
+
+    }
+
+  },
+
+
+
+  onReply: async ({ api, event, Reply, message }) => {
+
+    const { author } = Reply;
+
+    const userReply = event.body.trim();
+
+    const uid = event.senderID;
+
+
+
+    if (author !== uid) {
+
+      return message.reply("⚠ You are not authorized to reply to this message.");
+
+    }
+
+
+
+    if (global.GoatBot.onReply.has(event.messageID)) {
+
+      return;
+
+    }
+
+
+
+    api.setMessageReaction("♻️", event.messageID, () => {}, true);
+
+
+
+    if (userReply.toLowerCase() === 'reset') {
+
+      try {
+
+        const response = await axios.get('https://king-aryanapis.onrender.com/gts/reset', {
+
+          params: { uid }
+
+        });
+
+
+
+        if (response.status !== 200 || !response.data.status) {
+
+          throw new Error('Invalid or missing response from API');
+
         }
 
-        const { response, messageID } = await getAIResponse(input, event.senderID, event.messageID);
-        api.sendMessage(`⚪🔵🔴`, event.threadID, messageID);
-    },
-    onChat: async function ({ event, message }) {
-        const messageContent = event.body.trim().toLowerCase();
-        if (messageContent.startsWith("ai")) {
-            const input = messageContent.replace(/^ai\s*/, "").trim();
-            const { response, messageID } = await getAIResponse(input, event.senderID, message.messageID);
-            // Construct message with special fonts
-            const formattedResponse = ` 𝑴𝒊𝒂 𝑨𝒆 💙 \n━━━━━━━━━━━━━━━━\n${response} \n━━━━━━━━━━━━━━━━`;
-            message.reply(formattedResponse, messageID);
-        }
+
+
+        message.reply("✅ The conversation history has been successfully cleared.");
+
+
+
+        api.setMessageReaction("✅", event.messageID, () => {}, true);
+
+
+
+      } catch (error) {
+
+        console.error(`Error resetting conversation: ${error.message}, Status Code: ${error.response ? error.response.status : 'N/A'}`);
+
+        message.reply(`⚠ An error occurred while clearing the conversation history. Error: ${error.message}${error.response ? `, Status Code: ${error.response.status}` : ''}. Please try again later.`);
+
+
+
+        api.setMessageReaction("❌", event.messageID, () => {}, true);
+
+      }
+
+      return;
+
     }
+
+
+
+    const startTime = Date.now();
+
+
+
+    try {
+
+      const response = await axios.get('https://king-aryanapis.onrender.com/gts/smile', {
+
+        params: { uid, question: userReply }
+
+      });
+
+
+
+      if (response.status !== 200 || !response.data) {
+
+        throw new Error('Invalid or missing response from API');
+
+      }
+
+
+
+      const followUpResponse = response.data.response;
+
+      const endTime = Date.now();
+
+      const processTimeMs = endTime - startTime;
+
+      const processTimeSec = (processTimeMs / 1000).toFixed(2);
+
+
+
+      const followUpMessage = await message.reply(`❔𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻: ${userReply}\n━━━━━━━━━━━━━\n\n✅ 𝗔𝗻𝘀𝘄𝗲𝗿: ${followUpResponse}\n\n━━━━━━━━━━━━━\n𝗣𝗿𝗼𝗰𝗲𝘀𝘀 𝗧𝗶𝗺𝗲: ${processTimeSec} seconds`);
+
+
+
+      global.GoatBot.onReply.set(followUpMessage.messageID, {
+
+        commandName: module.exports.config.name,
+
+        messageID: followUpMessage.messageID,
+
+        author: event.senderID
+
+      });
+
+
+
+      api.setMessageReaction("✅", event.messageID, () => {}, true);
+
+
+
+    } catch (error) {
+
+      console.error(`Error fetching follow-up response: ${error.message}, Status Code: ${error.response ? error.response.status : 'N/A'}`);
+
+      message.reply(`⚠ An error occurred while processing your reply. Error: ${error.message}${error.response ? `, Status Code: ${error.response.status}` : ''}. Please try again later.`);
+
+
+
+      api.setMessageReaction("❌", event.messageID, () => {}, true);
+
+    }
+
+  }
+
 };
