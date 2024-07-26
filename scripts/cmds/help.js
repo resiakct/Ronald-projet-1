@@ -146,8 +146,8 @@ module.exports = {
 				}
 				arrayInfo.sort((a, b) => (a.category < b.category ? -1 : 1));
 				arrayInfo.forEach((data, index) => {
-					const categoryUpcase = `${index == 0 ? `` : ``}\n╭────────✦\n│🪶 𓊈 ${data.category.toUpperCase()} ${index == 0 ? "💙" : "𓊉 "}`;
-					data.names = data.names.sort().map(item => item = `│➪${item}`);
+					const categoryUpcase = `${index == 0 ? `` : ``}\n╭──❥𓊈 ${data.category.toUpperCase()} ${index == 0 ? "𓊉" : "𓊉 "}`;
+					data.names = data.names.sort().map(item => item = `│✪➪${item}`);
 					msg += `${categoryUpcase}\n${data.names.join("\n")}\n╰─────────────✦\n`;
 				});
 				message.reply(getLang("help2", msg, commands.size, prefix, doNotDelete));
