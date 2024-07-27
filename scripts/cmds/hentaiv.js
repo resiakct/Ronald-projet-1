@@ -8,7 +8,7 @@ module.exports = {
     role: 0,
     shortDescription: "Hentai video ",
     longDescription: "𝗥𝗱𝗺 🔞 Hentai videos 💀 pour tué ton bot rapidement, tout le monde peux l'utiliser",
-    category: "porno 🔞",
+    category: "p0rno 🔞",
     guide: "{p}{n}hvdo",
   },
 
