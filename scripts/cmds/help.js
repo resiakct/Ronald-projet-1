@@ -60,8 +60,8 @@ module.exports = {
 			pageNotFound: "Trang %1 không tồn tại"
 		},
 		en: {
-			help: "╔═══════════╗\n│   𝗥𝗢𝗡𝗔𝗟𝗗 𝗖𝗠𝗗𝗦\n╚═══════════╝\n%1\n╔═══════════╗\n   𝗥𝗢𝗡𝗔𝗟𝗗 𝗖𝗠𝗗𝗦\n╚═══════════╝\n➳ Page(s) [ %2/%3 ]\n➪[%4] Cmds \n➪Écrit %5help <page> pour voir d'autres cmds 👨🏽‍💻\n╰────────✪",
-			help2: "%1╭─────────────✨\n│➪J'ai [%2] Cmds │actuellement \n│➪Écrit %3help <command │name> pour voir le   │fonctionnement de la │commande \n╰─────────────✨",
+			help: "╔═══════════╗\n│   𝗥𝗢𝗡𝗔𝗟𝗗 𝗖𝗠𝗗𝗦\n╚═══════════╝\n%1\n╔═══════════╗\n│   𝗥𝗢𝗡𝗔𝗟𝗗 𝗖𝗠𝗗𝗦\n╚═══════════╝\n➳ Page(s) [ %2/%3 ]\n➪[%4] Cmds \n➪Écrit %5help <page> pour voir d'autres cmds 👨🏽‍💻\n╰────────✪",
+			help2: "%1╭────────────ꨄ\n│➪J'ai [%2] Cmds │actuellement \n│➪Écrit %3help <command │name> pour voir le   │fonctionnement de la │commande \n╰─────────────ꨄ",
 			commandNotFound: "Command \"%1\" does not exist",
 			getInfoCommand: "╭── NAME ────💙\n│ %1\n├──────────────\n 𝗜𝗡𝗙𝗢\n│ 𝗱𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻: %2\n│ Other names: %3\n│ Other names in your group: %4\n│ Version: %5\n│ Role: %6\n│ Time per command: %7s\n│ Author: %8\n│═══════════════\n 𝗨𝗦𝗔𝗚𝗘\n%9\n│═══════════════\n 𝗡𝗢𝗧𝗘\n│ The content inside <XXXXX> can be changed\n│ The content inside [a|b|c] is a or b or c\n╰──────⭔",
 			onlyInfo: "╭── INFO ────💙\n│ Command name: %1\n│ Description: %2\n│ Other names: %3\n│ Other names in your group: %4\n│ Version: %5\n│ Role: %6\n│ Time per command: %7s\n│ Author: %8\n╰─────────────✦",
@@ -204,13 +204,7 @@ module.exports = {
 			let sendWithAttachment = false; // check subcommand need send with attachment or not
 
 			if (args[1]?.match(/^-g|guide|-u|usage$/)) {
-				formSendMessage.body = getLang("onlyUsage", guideBody.split("\n").join("\n│"));
-				sendWithAttachment = true;
-			}
-			else if (args[1]?.match(/^-a|alias|aliase|aliases$/))
-				formSendMessage.body = getLang("onlyAlias", aliasesString, aliasesThisGroup);
-			else if (args[1]?.match(/^-r|role$/))
-				formSendMessage.body = getLang("onlyRole", roleText);
+				formSendMessage.body = getLang("", roleText);
 			else if (args[1]?.match(/^-i|info$/))
 				formSendMessage.body = getLang("onlyInfo", configCommand.name, description, aliasesString, aliasesThisGroup, configCommand.version, roleText, configCommand.countDown || 1, author || "");
 			else {
