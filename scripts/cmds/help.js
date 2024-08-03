@@ -270,4 +270,4 @@ function cropContent(content, max) {
 		content = content + "...";
 	}
 	return content;
-      }
+				}
