@@ -120,7 +120,7 @@ module.exports = {
 
 
 
-      const replyMessage = await message.reply(`💬 𝘾𝙝𝙖𝙩 𝙂𝙋𝙏-4 \n━━━━━━━━━━━━━\n\n✅ 𝗔𝗻𝘀𝘄𝗲𝗿: ${answer}\n\n━━━━━━━━━━━━━\n`);
+      const replyMessage = await message.reply(`💬 𝘾𝙝𝙖𝙩 𝙂𝙋𝙏-4 \n━━━━━━━━━━━━━\n\n💬 ${answer}\n\n━━━━━━━━━━━━━\n`);
 
 
 
