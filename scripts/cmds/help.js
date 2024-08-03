@@ -43,7 +43,7 @@ module.exports = {
 
 	langs: {
 		vi: {
-			help: " |I{•------» ✰...𝗢𝗣𝗧𝗜𝗠𝗨𝗦....✰ «------•}I| \n%1\n |I{•------» ✰...𝗢𝗣𝗧𝗜𝗠𝗨𝗦....✰ «------•}I| \n│ Trang [ %2/%3 ]\n│ Hiện tại bot có %4 lệnh có thể sử dụng\n│ » Gõ %5help <số trang> để xem danh sách các lệnh\n│ » Gõ %5help để xem chi tiết cách sử dụng lệnh đó\n |I{•------» ✰...𝗢𝗣𝗧𝗜𝗠𝗨𝗦....✰ «------•}I| \n│ %6\n |I{•------» ✰...𝗢𝗣𝗧𝗜𝗠𝗨𝗦....✰ «------•}I| ",
+			help: " |I{•------» ✰...𝙍𝙊𝙉𝘼𝙇𝘿....✰ «------•}I| \n%1\n |I{•------» ✰...𝙍𝙊𝙉𝘼𝙇𝘿....✰ «------•}I| \n│ Trang [ %2/%3 ]\n│ Hiện tại bot có %4 lệnh có thể sử dụng\n│ » Gõ %5help <số trang> để xem danh sách các lệnh\n│ » Gõ %5help để xem chi tiết cách sử dụng lệnh đó\n |I{•------» ✰...𝙍𝙊𝙉𝘼𝙇𝘿....✰ «------•}I| \n│ %6\n |I{•------» ✰...𝙍𝙊𝙉𝘼𝙇𝘿....✰ «------•}I| ",
 			help2: "%1├───────⭔\n➬❦....... » Hiện tại bot có %2 lệnh có thể sử dụng\n│ » Gõ %3help <tên lệnh> để xem chi tiết cách sử dụng lệnh đó\n│ %4\n╰─────────────⭓",
 			commandNotFound: "Lệnh \"%1\" không tồn tại",
 			getInfoCommand: "╭── NAME ────⭓\n│ %1\n❏❖❏❖❏❖ - ❖❏❖❏❖❏ INFO\n│ Mô tả: %2\n│ Các tên gọi khác: %3\n│ Các tên gọi khác trong nhóm bạn: %4\n│ Version: %5\n│ Role: %6\n│ Thời gian mỗi lần dùng lệnh: %7s\n│ Author: %8\n❏❖❏❖❏❖ - ❖❏❖❏❖❏ Usage\n│%9\n❏❖❏❖❏❖ - ❖❏❖❏❖❏ Notes\n│ Nội dung bên trong <XXXXX> là có thể thay đổi\n│ Nội dung bên trong [a|b|c] là a hoặc b hoặc c\n╰──────⭔",
@@ -61,13 +61,13 @@ module.exports = {
 		},
 		en: {
 			help: "╔═══════════╗\n│   𝗥𝗢𝗡𝗔𝗟𝗗 𝗖𝗠𝗗𝗦\n╚═══════════╝\n%1\n╔═══════════╗\n│   𝗥𝗢𝗡𝗔𝗟𝗗 𝗖𝗠𝗗𝗦\n╚═══════════╝\n➳ Page(s) [ %2/%3 ]\n➪[%4] Cmds \n➪Écrit %5help <page> pour voir d'autres cmds 👨🏽‍💻\n╰────────✪",
-			help2: "%1╭────────────ꨄ\n│➪J'ai [%2] Cmds │actuellement \n│➪Écrit %3help <command │name> pour voir le   │fonctionnement de la │commande \n╰─────────────ꨄ",
+			help2: "%1╭─────────────❥\n│➪J'ai [%2] Cmds │actuellement \n│➪Écrit %3help <command │name> pour voir le   │fonctionnement de la │commande \n╰─────────────❥",
 			commandNotFound: "Command \"%1\" does not exist",
 			getInfoCommand: "╭── NAME ────💙\n│ %1\n├──────────────\n 𝗜𝗡𝗙𝗢\n│ 𝗱𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻: %2\n│ Other names: %3\n│ Other names in your group: %4\n│ Version: %5\n│ Role: %6\n│ Time per command: %7s\n│ Author: %8\n│═══════════════\n 𝗨𝗦𝗔𝗚𝗘\n%9\n│═══════════════\n 𝗡𝗢𝗧𝗘\n│ The content inside <XXXXX> can be changed\n│ The content inside [a|b|c] is a or b or c\n╰──────⭔",
-			onlyInfo: "╭── INFO ────💙\n│ Command name: %1\n│ Description: %2\n│ Other names: %3\n│ Other names in your group: %4\n│ Version: %5\n│ Role: %6\n│ Time per command: %7s\n│ Author: %8\n╰─────────────✦",
-			onlyUsage: "╭── USAGE ────💙\n│%1\n╰─────────────💙",
-			onlyAlias: "╭── ALIAS ────💙\n│ Other names: %1\n│ Other names in your group: %2\n╰─────────────💙",
-			onlyRole: "╭── ROLE ────💙\n│%1\n╰─────────────💙",
+			onlyInfo: "╭── INFO ────❥\n│ Command name: %1\n│ Description: %2\n│ Other names: %3\n│ Other names in your group: %4\n│ Version: %5\n│ Role: %6\n│ Time per command: %7s\n│ Author: %8\n╰─────────────✦",
+			onlyUsage: "╭── USAGE ────❥\n│%1\n╰─────────────❥",
+			onlyAlias: "╭── ALIAS ────❥\n│ Other names: %1\n│ Other names in your group: %2\n╰─────────────❥",
+			onlyRole: "╭── ROLE ────❥\n│%1\n╰─────────────❥",
 			doNotHave: "Do not have",
 			roleText0: "0 (All users)",
 			roleText1: "1 (Group administrators)",
@@ -146,8 +146,8 @@ module.exports = {
 				}
 				arrayInfo.sort((a, b) => (a.category < b.category ? -1 : 1));
 				arrayInfo.forEach((data, index) => {
-					const categoryUpcase = `${index == 0 ? `` : ``}\n╭──❥𓊈 ${data.category.toUpperCase()} ${index == 0 ? "𓊉" : "𓊉 "}`;
-					data.names = data.names.sort().map(item => item = `│✪➪ ${item}`);
+					const categoryUpcase = `${index == 0 ? `` : ``}\n╭───𓊈 ${data.category.toUpperCase()} ${index == 0 ? "𓊉" : "𓊉 "}`;
+					data.names = data.names.sort().map(item => item = `│➪${item}`);
 					msg += `${categoryUpcase}\n${data.names.join("\n")}\n╰─────────────✦\n`;
 				});
 				message.reply(getLang("help2", msg, commands.size, prefix, doNotDelete));
@@ -204,7 +204,13 @@ module.exports = {
 			let sendWithAttachment = false; // check subcommand need send with attachment or not
 
 			if (args[1]?.match(/^-g|guide|-u|usage$/)) {
-				formSendMessage.body = getLang("", roleText);
+				formSendMessage.body = getLang("onlyUsage", guideBody.split("\n").join("\n│"));
+				sendWithAttachment = true;
+			}
+			else if (args[1]?.match(/^-a|alias|aliase|aliases$/))
+				formSendMessage.body = getLang("onlyAlias", aliasesString, aliasesThisGroup);
+			else if (args[1]?.match(/^-r|role$/))
+				formSendMessage.body = getLang("onlyRole", roleText);
 			else if (args[1]?.match(/^-i|info$/))
 				formSendMessage.body = getLang("onlyInfo", configCommand.name, description, aliasesString, aliasesThisGroup, configCommand.version, roleText, configCommand.countDown || 1, author || "");
 			else {
