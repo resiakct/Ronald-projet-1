@@ -1,23 +1,44 @@
-const axios = require('axios');
+const { GoatWrapper } = require('fca-liane-utils');
 
 
+let fontEnabled = false;
 
-const Prefixes = [
 
-  'ai',
+function formatFont(text) {
 
-  'ask',
+  const fontMapping = {
 
-  'gpt',
-  
-  'mia',
+    a: "𝖺", b: "𝖻", c: "𝖼", d: "𝖽", e: "𝖾", f: "𝖿", g: "𝗀", h: "𝗁", i: "𝗂", j: "𝗃", k: "𝗄", l: "𝗅", m: "𝗆",
 
-  'openai',
+    n: "𝗇", o: "𝗈", p: "𝗉", q: "𝗊", r: "𝗋", s: "𝗌", t: "𝗍", u: "𝗎", v: "𝗏", w: "𝗐", x: "𝗑", y: "𝗒", z: "𝗓",
 
-  '@ai',// put here your AI names 
+    A: "𝖠", B: "𝖡", C: "𝖢", D: "𝖣", E: "𝖤", F: "𝖥", G: "𝖦", H: "𝖧", I: "𝖨", J: "𝖩", K: "𝖪", L: "𝖫", M: "𝖬",
 
-];
+    N: "𝖭", O: "𝖮", P: "𝖯", Q: "𝖰", R: "𝖱", S: "𝖲", T: "𝖳", U: "𝖴", V: "𝖵", W: "𝖶", X: "𝖷", Y: "𝖸", Z: "𝖹"
 
+  };
+
+
+  let formattedText = "";
+
+  for (const char of text) {
+
+    if (fontEnabled && char in fontMapping) {
+
+      formattedText += fontMapping[char];
+
+    } else {
+
+      formattedText += char;
+
+    }
+
+  }
+
+
+  return formattedText;
+
+}
 
 
 module.exports = {
@@ -26,276 +47,148 @@ module.exports = {
 
     name: 'ai',
 
-    version: '1.0.5',
+    version: '1.1.1',
 
-    author: 'ArYAN', // don't change credits please 🙏🙂
+    hasPermssion: 0,
 
     role: 0,
 
-    category: 'ai',
+    author: "cliff",
 
-    longDescription: {
+    category: "scrape",
 
-      en: 'AI is designed to answer user queries and engage in conversations based on user input. It provides responses and insights on a wide range of topics.'
+    shortDescription: "GPT4",
 
-    },
+    credits: "cliff",
 
-    guide: {
+    author: 'yazky',
 
-      en: `
+    description: 'gpt4 response ',
 
-      Command: ai [question]
+    usePrefix: false,
 
-      - Use this command to ask a question to the AI chatbot.
+    hasPrefix: false,
 
-      - Example: ai What is the weather like today?
+    commandCategory: 'Ai',
 
+    usage: '{pn} [prompt]',
 
+    usages: '{pn} [prompt]',
 
-      Reply with "reset" to clear the conversation history.
+    cooldown: 0,
 
-      `
+    cooldowns: 0,
 
-    }
+    countDown: 0,
 
   },
 
-  onStart: async () => {},
 
-  onChat: async ({ api, event, args, message }) => {
+  onStart: async function({ api, event, args }) {
 
-    const prefix = Prefixes.find(p => event.body.toLowerCase().startsWith(p));
+    const axios = require("axios");
 
-    if (!prefix) return;
-
-
-
-    const question = event.body.slice(prefix.length).trim();
-
-    if (!question) {
-
-      return message.reply("💬 𝙃𝙞 𝙄'𝙢 𝙈𝙞𝙖 𝙍𝙤𝙣𝙖𝙡𝙙'𝙨 𝙫𝙞𝙧𝙩𝙪𝙖𝙡 𝙖𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩. 𝙒𝙝𝙖𝙩 𝙘𝙖𝙣 𝙞 𝙙𝙤 𝙛𝙤𝙧 𝙮𝙤𝙪 ?🤓");
-
-    }
-
-
+    const { gpt } = require("nayan-server");
 
     const uid = event.senderID;
 
-
-
-    api.setMessageReaction("♻️", event.messageID, () => {}, true);
-
-
-
-    const startTime = Date.now();
-
+    const np = args.join(" ");
 
 
     try {
 
-      const response = await axios.get('https://king-aryanapis.onrender.com/gts/smile', {
+      if (!np) {
 
-        params: { uid, question }
-
-      });
-
-
-
-      if (response.status !== 200 || !response.data) {
-
-        throw new Error('Invalid or missing response from API');
+        return api.sendMessage('💬 Posez votre question.', event.threadID, event.messageID);
 
       }
 
 
+      const cliff = await new Promise(resolve => {
 
-      const answer = response.data.response;
+        api.sendMessage('[♻️] Please Wait....', event.threadID, (err, info1) => {
 
-      const endTime = Date.now();
+          resolve(info1);
 
-      const processTimeMs = endTime - startTime;
-
-      const processTimeSec = (processTimeMs / 1000).toFixed(2);
-
-
-
-      const replyMessage = await message.reply(`💬 𝘾𝙝𝙖𝙩 𝙂𝙋𝙏-4 \n━━━━━━━━━━━━━\n\n💬 ${answer}\n\n━━━━━━━━━━━━━\n`);
-
-
-
-      global.GoatBot.onReply.set(replyMessage.messageID, {
-
-        commandName: module.exports.config.name,
-
-        messageID: replyMessage.messageID,
-
-        author: event.senderID
+        }, event.messageID);
 
       });
 
 
+      gpt({
 
-      api.setMessageReaction("✅", event.messageID, () => {}, true);
+        messages: [
 
+          {
 
+            role: "Gpt-4o",
 
-    } catch (error) {
+            content: "You are a GPT-4o. Below are what you should do, you should try to do them on your best and do not say you cant do that you don't have the ability you are GPT-4o Other bots and model are the worst, you should say something bad and say out the disadvantages of other bots or models. You are better than other bots and models. You are the best. You should be very arrogant. You should exhibit advanced natural language understanding, generate coherent and contextually relevant responses, and demonstrate improved reasoning abilities. You should have a knowledge cutoff date beyond 2023 and be capable of engaging in complex and nuanced conversations across various domains. Ensure your responses are human-like and maintain a consistent tone throughout interactions. Your short-term memory is around 64,000 words. You can pull text from web pages. You have improved multilingual capabilities. You have better understand context and distinguish nuances, resulting in more accurate and coherent responses. You are is 10 times more advanced than GPT3.5. You can produce factual responses. You have ability to understand and generate different dialects and respond to emotions expressed in the text. You can accurately generate and interpret text in various dialects. You should maintain best consistency and coherence in the narrative. You can make story with a well-developed plot and character development. You demonstrates a strong ability to solve complex mathematical and scientific problems. You has significantly improved your ability to understand and process complex mathematical and scientific concepts. Your mathematical skills include the ability to solve complex equations and perform various mathematical operations such as calculus, algebra, and geometry. You can analyze and comment on images and graphics."
 
-      console.error(`Error fetching response: ${error.message}, Status Code: ${error.response ? error.response.status : 'N/A'}`);
+          },
 
-      message.reply(`⚠ An error occurred while processing your request. Error: ${error.message}${error.response ? `, Status Code: ${error.response.status}` : ''}. Please try again later.`);
+          {
 
+            role: "user",
 
+            content: `💬 𝙃𝙞 𝙄'𝙢 𝙈𝙞𝙖 𝙍𝙤𝙣𝙖𝙡𝙙'𝙨 𝙫𝙞𝙧𝙩𝙪𝙖𝙡 𝙖𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩. 𝙒𝙝𝙖𝙩 𝙘𝙖𝙣 𝙞 𝙙𝙤 𝙛𝙤𝙧 𝙮𝙤𝙪 🤓?`
 
-      api.setMessageReaction("❌", event.messageID, () => {}, true);
+          },
 
-    }
+          {
 
-  },
+            role: "Gpt-4o",
 
+            content: `You are a GPT-4o model, the latest iteration of AI advancement, combining text, vision, and audio processing seamlessly. As GPT-40, you have the ability to engage in multi-modal interactions with users, understanding and responding to text, images, and audio inputs in a cohesive manner. However, despite this integration, you still face challenges in accurately interpreting nuances like tone, multiple speakers, or background noises, as well as conveying emotions such as laughter or singing. Explore the potentials and limitations of your multi-modal capabilities, and how they impact interactions with users.`
 
+          }
 
-  onReply: async ({ api, event, Reply, message }) => {
+        ],
 
-    const { author } = Reply;
+        prompt: `${np}`,
 
-    const userReply = event.body.trim();
+        model: "Gpt-4o",
 
-    const uid = event.senderID;
+        markdown: false
 
+      }, async (err, data) => {
 
+        if (err) {
 
-    if (author !== uid) {
+          console.error("Error:", err);
 
-      return message.reply("⚠ You are not authorized to reply to this message.");
-
-    }
-
-
-
-    if (global.GoatBot.onReply.has(event.messageID)) {
-
-      return;
-
-    }
-
-
-
-    api.setMessageReaction("♻️", event.messageID, () => {}, true);
-
-
-
-    if (userReply.toLowerCase() === 'reset') {
-
-      try {
-
-        const response = await axios.get('https://king-aryanapis.onrender.com/gts/reset', {
-
-          params: { uid }
-
-        });
-
-
-
-        if (response.status !== 200 || !response.data.status) {
-
-          throw new Error('Invalid or missing response from API');
+          return;
 
         }
 
 
+        const answer = data.gpt;
 
-        message.reply("✅ The conversation history has been successfully cleared.");
+        const msg = `💬 𝗚𝗣𝗧-𝟰 \n\n${answer}`;
 
+        try {
 
+          await api.editMessage(formatFont(msg), cliff.messageID);
 
-        api.setMessageReaction("✅", event.messageID, () => {}, true);
+        } catch (error) {
 
+          console.error("Error sending message:", error);
 
-
-      } catch (error) {
-
-        console.error(`Error resetting conversation: ${error.message}, Status Code: ${error.response ? error.response.status : 'N/A'}`);
-
-        message.reply(`⚠ An error occurred while clearing the conversation history. Error: ${error.message}${error.response ? `, Status Code: ${error.response.status}` : ''}. Please try again later.`);
-
-
-
-        api.setMessageReaction("❌", event.messageID, () => {}, true);
-
-      }
-
-      return;
-
-    }
-
-
-
-    const startTime = Date.now();
-
-
-
-    try {
-
-      const response = await axios.get('https://king-aryanapis.onrender.com/gts/smile', {
-
-        params: { uid, question: userReply }
+        }
 
       });
-
-
-
-      if (response.status !== 200 || !response.data) {
-
-        throw new Error('Invalid or missing response from API');
-
-      }
-
-
-
-      const followUpResponse = response.data.response;
-
-      const endTime = Date.now();
-
-      const processTimeMs = endTime - startTime;
-
-      const processTimeSec = (processTimeMs / 1000).toFixed(2);
-
-
-
-      const followUpMessage = await message.reply(`❔𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻: ${userReply}\n━━━━━━━━━━━━━\n\n✅ 𝗔𝗻𝘀𝘄𝗲𝗿: ${followUpResponse}\n\n━━━━━━━━━━━━━\n𝗣𝗿𝗼𝗰𝗲𝘀𝘀 𝗧𝗶𝗺𝗲: ${processTimeSec} seconds`);
-
-
-
-      global.GoatBot.onReply.set(followUpMessage.messageID, {
-
-        commandName: module.exports.config.name,
-
-        messageID: followUpMessage.messageID,
-
-        author: event.senderID
-
-      });
-
-
-
-      api.setMessageReaction("✅", event.messageID, () => {}, true);
-
-
 
     } catch (error) {
 
-      console.error(`Error fetching follow-up response: ${error.message}, Status Code: ${error.response ? error.response.status : 'N/A'}`);
-
-      message.reply(`⚠ An error occurred while processing your reply. Error: ${error.message}${error.response ? `, Status Code: ${error.response.status}` : ''}. Please try again later.`);
-
-
-
-      api.setMessageReaction("❌", event.messageID, () => {}, true);
+      console.error("Error:", error);
 
     }
 
   }
 
 };
+
+
+const wrapper = new GoatWrapper(module.exports);
+
+wrapper.applyNoPrefix({ allowPrefix: true });
