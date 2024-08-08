@@ -1,28 +1,41 @@
-module.exports = {
+ module.exports = {
   config: {
     name: "upt",
-    aliases: ["upt", "up"],
+    aliases: ["up"],
     version: "1.0",
     author: "Ronald",
-    role: 0,
+    role: 2,
     shortDescription: {
-      en: "Displays the uptime of the bot."
+      en: "Displays the total number of users of the bot and check uptime "
     },
     longDescription: {
-      en: "Displays the amount of time that the bot has been running for."
+      en: "Displays the total number of users who have interacted with the bot and check uptime."
     },
-    category: "System",
+    category: "system",
     guide: {
-      en: "Use {p}uptime to display the uptime of the bot."
+      en: "Use {p}totalusers to display the total number of users of the bot and check uptime."
     }
   },
-  onStart: async function ({ api, event, args }) {
-    const uptime = process.uptime();
-    const seconds = Math.floor(uptime % 60);
-    const minutes = Math.floor((uptime / 60) % 60);
-    const hours = Math.floor((uptime / (60 * 60)) % 24);
-    const days = Math.floor(uptime / (60 * 60 * 24));
-    const uptimeString =`[🗓️] = ${days} jours\n│ \n [🧘🏽‍♂️] = ${hours} heures\n│  \n [⏳] = ${minutes} minutes\n│  \n [⏱️] = ${seconds} secondes`;
-    api.sendMessage(`╔════Durée════╗\n ${uptimeString}  \n╚════════════╝`, event.threadID);
+  onStart: async function ({ api, event, args, usersData, threadsData }) {
+    try {
+      const allUsers = await usersData.getAll();
+      const allThreads = await threadsData.getAll();
+      const uptime = process.uptime();
+      
+const days = 
+Math.floor(uptime / (3600 * 24));
+      const hours = Math.floor(uptime / 3600);
+      const minutes = Math.floor((uptime % 3600) / 60);
+      const seconds = Math.floor(uptime % 60);
+      
+      const uptimeString = `${days} : ${hours} : ${minutes} : ${seconds}`;
+      
+      api.sendMessage(`[⌛] 𝙏𝙞𝙢𝙚\n\n✪➩ ${uptimeString}\n
+[👨🏽‍🦱] 𝙉𝙪𝙢𝙗𝙚𝙧 𝙛𝙤𝙧 𝙪𝙨𝙚𝙧𝙨\n\n✪➩ ${allUsers.length}\n
+[💬] 𝙉𝙪𝙢𝙗𝙚𝙧 𝙛𝙤𝙧 𝙙𝙞𝙨𝙘𝙪𝙨𝙨𝙞𝙤𝙣\n\n✪➩ ${allThreads.length}`, event.threadID);
+    } catch (error) {
+      console.error(error);
+      api.sendMessage("An error occurred while retrieving data.", event.threadID);
+    }
   }
 };
