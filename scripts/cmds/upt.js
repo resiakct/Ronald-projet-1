@@ -28,7 +28,7 @@ Math.floor(uptime / (3600 * 24));
       const minutes = Math.floor((uptime % 3600) / 60);
       const seconds = Math.floor(uptime % 60);
       
-      const uptimeString = `${days} : ${hours} : ${minutes} : ${seconds}`;
+      const uptimeString = `Days: ${days} \nHours: ${hours}\nMinutes: ${minutes} \nSeconds: ${seconds}`;
       
       api.sendMessage(`[⌛] 𝙏𝙞𝙢𝙚\n\n✪➩ ${uptimeString}\n
 [👨🏽‍🦱] 𝙉𝙪𝙢𝙗𝙚𝙧 𝙛𝙤𝙧 𝙪𝙨𝙚𝙧𝙨\n\n✪➩ ${allUsers.length}\n
