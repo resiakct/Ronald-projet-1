@@ -29,7 +29,7 @@ module.exports = {
 			welcomeMessage: "Merci de m'avoir invité dans ce groupe !══════════════════ \n prefix: %1 ══════════════════ utilise: %1help pour voir mes commandes",
 			multiple1: "you",
 			multiple2: "you guys",
-			defaultWelcomeMessage: `𝗕𝗶𝗲𝗻𝘃𝗲𝗻𝘂(𝗲) {userName} ═════════════════ 𝗱𝗮𝗻𝘀 𝗹𝗲 𝗴𝗿𝗼𝘂𝗽𝗲 {boxName} ══════════════════ `
+			defaultWelcomeMessage: ` Hello!! {userName} ═════════════════ welcome to {boxName} ══════════════════ `
 		}
 	},
 
